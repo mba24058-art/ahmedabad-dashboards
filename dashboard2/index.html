@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmedabad 2036 Olympics - Economic Impact Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfa;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .brand-orange { color: #F85A3E; }
+        .bg-brand-orange { background-color: #F85A3E; }
+        .brand-yellow { color: #F9CD2F; }
+        .bg-brand-yellow { background-color: #F9CD2F; }
+        .brand-teal { color: #50A264; }
+        .bg-brand-teal { background-color: #50A264; }
+        .brand-light-green { color: #85C794; }
+        .bg-brand-light-green { background-color: #85C794; }
+        .brand-peach { color: #F98C2F; }
+        .bg-brand-peach { background-color: #F98C2F; }
+
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #F85A3E;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-brand-teal text-white text-center py-12 px-4 shadow-lg">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Ahmedabad 2036</h1>
+        <p class="text-xl md:text-2xl font-light mt-2">The Unassailable Economic Blueprint</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="executive-summary" class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-12">
+            <h2 class="text-3xl font-bold brand-teal mb-4 text-center">Executive Summary</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-8">
+                The 2036 Ahmedabad Olympics is not merely a bid; it's a meticulously planned economic catalyst. Our proposal, the <strong class="brand-orange">"Triveni Legacy Framework,"</strong> is engineered to convert a 16-day event into a multi-decade economic supercycle. This strategy guarantees a staggering <strong class="brand-teal">₹3.8 Trillion economic impact</strong> and the creation of over <strong class="brand-teal">2.2 million sustainable jobs</strong> by 2040, cementing Ahmedabad's position as a tier-1 global metropolis for finance, technology, and sustainable enterprise.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="stat-card">
+                    <p class="text-5xl font-black brand-teal">₹3.8T</p>
+                    <p class="text-lg font-semibold mt-2">Guaranteed Economic Impact</p>
+                </div>
+                <div class="stat-card">
+                    <p class="text-5xl font-black brand-teal">2.2M+</p>
+                    <p class="text-lg font-semibold mt-2">High-Value Jobs by 2040</p>
+                </div>
+                <div class="stat-card">
+                    <p class="text-5xl font-black brand-teal">12x</p>
+                    <p class="text-lg font-semibold mt-2">Growth in FDI via GIFT City</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="context-analysis" class="mb-12">
+            <h2 class="text-3xl font-bold brand-teal mb-6 text-center">Context Analysis: The Undeniable Ahmedabad Advantage</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Ahmedabad's Economic DNA</h3>
+                    <div class="chart-container">
+                        <canvas id="sectoralContributionChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">Ahmedabad's hyper-diversified economy, supercharged by the GIFT City financial hub and a deep-rooted manufacturing base, provides the perfect launchpad. This is not about building an economy; it's about igniting one.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Host City Economic Trajectory Analysis</h3>
+                     <div class="chart-container">
+                        <canvas id="hostCityRadarChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">Our model doesn't just learn from past Games—it transcends them. By mapping key legacy metrics, we demonstrate how Ahmedabad is positioned to shatter previous benchmarks in infrastructure utilization and long-term brand value, avoiding the pitfalls that plagued previous hosts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="innovation-framework" class="mb-12 bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold brand-teal mb-6 text-center">Innovation Framework: The Triveni Legacy Framework</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-8">
+                Our model's three pillars are not silos; they are interconnected gears in a powerful engine of perpetual growth, designed for maximum economic velocity and long-term impact.
+            </p>
+            <div class="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-4">
+                <div class="w-full md:w-1/4 text-center p-4 rounded-lg border-2 border-brand-orange bg-orange-50">
+                    <div class="text-4xl mb-3">🏦</div>
+                    <h3 class="text-xl font-bold brand-teal">Pillar 1: GIFT City Global Amplifier</h3>
+                    <p class="text-gray-600 mt-2">Weaponize the Olympics as a global marketing blitz to attract unprecedented FDI into GIFT City, cementing it as the undisputed fintech and green finance capital of South Asia.</p>
+                </div>
+                <div class="w-full md:w-1/4 text-center p-4 rounded-lg border-2 border-brand-peach bg-yellow-50">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h3 class="text-xl font-bold brand-teal">Pillar 2: MSME & Startup Super-Cluster</h3>
+                    <p class="text-gray-600 mt-2">Forge an elite accelerator to funnel Olympic contracts to 10,000+ local MSMEs and tech startups, creating a self-sustaining innovation ecosystem that outlives the Games.</p>
+                </div>
+                <div class="w-full md:w-1/4 text-center p-4 rounded-lg border-2 border-brand-yellow bg-green-50">
+                    <div class="text-4xl mb-3">🏞️</div>
+                    <h3 class="text-xl font-bold brand-teal">Pillar 3: Sustainable Tourism Circuit</h3>
+                    <p class="text-gray-600 mt-2">Engineer smart, green infrastructure that serves the Games and seamlessly pivots into a high-value, permanent tourism and MICE (Meetings, Incentives, Conferences, Exhibitions) circuit.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="innovation-practices" class="mb-12 bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold brand-teal mb-6 text-center">Innovation Beyond Best Practices</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-8">
+                Standard best practices are insufficient. We introduce a groundbreaking <strong class="brand-orange">"Digital Twin for Urban Planning"</strong>—a dynamic, real-time virtual replica of Ahmedabad. This tool moves beyond static planning to predictive, responsive urban management, ensuring every asset is optimized for efficiency and legacy value, from traffic flow to energy consumption.
+            </p>
+            <div class="flex flex-col md:flex-row justify-between items-center bg-gray-50 p-6 rounded-lg">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="font-bold text-lg text-gray-700">Real-World Data Inputs</p>
+                    <p class="text-sm brand-teal">IoT Sensors, Traffic, Energy Grids, Public Transport</p>
+                </div>
+                <div class="text-4xl brand-orange mx-4 font-mono">&rarr;</div>
+                <div class="border-2 border-brand-orange p-4 rounded-lg bg-white shadow-md text-center">
+                    <p class="font-bold text-xl brand-teal">Ahmedabad Digital Twin</p>
+                    <p class="text-sm text-gray-600">AI-Powered Simulation & Predictive Analytics Engine</p>
+                </div>
+                <div class="text-4xl brand-orange mx-4 font-mono">&rarr;</div>
+                <div class="text-center md:text-left">
+                    <p class="font-bold text-lg text-gray-700">Optimized Legacy Outputs</p>
+                    <p class="text-sm brand-teal">Smart Infrastructure, Adaptive Housing, Sustainable Tourism</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact-measurement" class="mb-12">
+            <h2 class="text-3xl font-bold brand-teal mb-6 text-center">Impact & Measurement: The Legacy Dividend</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Projected Job Creation by Sector</h3>
+                    <div class="chart-container">
+                        <canvas id="jobCreationChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">The Trident model ensures a strategic transition from construction-heavy jobs to permanent, high-skill roles in technology, finance, and specialized services, delivering long-term prosperity, not just temporary employment.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Gujarat GSDP Growth Trajectory</h3>
+                     <div class="chart-container">
+                        <canvas id="gsdpGrowthChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-center text-gray-600">The Olympic investment acts as a powerful economic accelerant. Our model projects a significant "Legacy Dividend" that permanently elevates the state's GSDP growth curve, creating compounding returns for decades.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="financial-feasibility" class="mb-12 bg-white rounded-lg shadow-xl p-6 md:p-8">
+             <h2 class="text-3xl font-bold brand-teal mb-6 text-center">Financial Feasibility: A De-Risked Funding Matrix</h2>
+             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="chart-container" style="height: 350px; max-height: 450px;">
+                        <canvas id="fundingModelChart"></canvas>
+                    </div>
+                </div>
+                 <div class="w-full md:w-1/2">
+                    <p class="text-lg mb-4">Our financial architecture is built on a sophisticated Public-Private Partnership (PPP) framework that insulates public funds while aggressively courting private capital through clear, profitable, long-term ROI pathways.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="brand-orange font-bold mr-2 text-xl">●</span> <strong>Public Sector (40%):</strong> Strategic government funding for critical, non-revenue generating infrastructure (e.g., security, core transport).</li>
+                        <li class="flex items-start"><span class="brand-peach font-bold mr-2 text-xl">●</span> <strong>Private Sector / PPP (45%):</strong> Capital injection for revenue-generating assets like convertible athlete villages and smart arenas, structured for post-Games profitability.</li>
+                        <li class="flex items-start"><span class="brand-yellow font-bold mr-2 text-xl">●</span> <strong>Olympic Revenues (15%):</strong> IOC contributions, media rights, and premium sponsorships form the final tranche.</li>
+                    </ul>
+                </div>
+             </div>
+        </section>
+
+        <footer class="text-center py-8">
+            <p class="text-2xl font-bold brand-teal">This Isn't Just a Bid. It's India's Economic Declaration.</p>
+            <p class="text-gray-600 mt-2">A vote for Ahmedabad is a vote for an inevitable economic powerhouse.</p>
+        </footer>
+    </main>
+
+<script>
+    const brandColors = {
+        orange: '#F85A3E',
+        peach: '#F98C2F',
+        yellow: '#F9CD2F',
+        lightGreen: '#85C794',
+        teal: '#50A264',
+        lightGray: '#E5E7EB'
+    };
+
+    function processLabels(labels) {
+        const charLimit = 16;
+        return labels.map(label => {
+            if (label.length <= charLimit) {
+                return label;
+            }
+            const words = label.split(' ');
+            const newLabels = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > charLimit) {
+                    newLabels.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                newLabels.push(currentLine.trim());
+            }
+            return newLabels;
+        });
+    }
+
+    const tooltipTitleCallback = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                labels: {
+                    boxWidth: 20,
+                    padding: 20,
+                    font: {
+                        size: 14
+                    }
+                }
+            }
+        },
+        maintainAspectRatio: false,
+        responsive: true
+    };
+    
+    new Chart(document.getElementById('sectoralContributionChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Services (Finance, IT)', 'Manufacturing', 'Trade & Hospitality', 'Construction', 'Agriculture'],
+            datasets: [{
+                label: 'Sectoral Contribution',
+                data: [54, 25, 12, 6, 3],
+                backgroundColor: [brandColors.teal, brandColors.lightGreen, brandColors.peach, brandColors.yellow, brandColors.lightGray],
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        },
+        options: { ...tooltipTitleCallback }
+    });
+
+    new Chart(document.getElementById('hostCityRadarChart'), {
+        type: 'radar',
+        data: {
+            labels: processLabels(['Infrastructure Utilization', 'Tourism Growth', 'Job Creation', 'Debt Ratio (Lower is better)', 'Brand Value']),
+            datasets: [{
+                label: 'London 2012',
+                data: [6, 5, 6, 7, 7],
+                borderColor: brandColors.lightGray,
+                backgroundColor: 'rgba(229, 231, 235, 0.2)',
+                pointBackgroundColor: brandColors.lightGray
+            }, {
+                label: 'Barcelona 1992',
+                data: [9, 8, 7, 5, 9],
+                borderColor: brandColors.peach,
+                backgroundColor: 'rgba(249, 140, 47, 0.2)',
+                pointBackgroundColor: brandColors.peach
+            }, {
+                label: 'Ahmedabad 2036 (Proj.)',
+                data: [10, 9, 9, 3, 10],
+                borderColor: brandColors.orange,
+                backgroundColor: 'rgba(248, 90, 62, 0.3)',
+                pointBackgroundColor: brandColors.orange
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(0,0,0,0.1)' },
+                    grid: { color: 'rgba(0,0,0,0.1)' },
+                    pointLabels: { font: { size: 12 } },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('jobCreationChart'), {
+        type: 'bar',
+        data: {
+            labels: ['2026-2030 (Prep)', '2031-2035 (Build)', '2036 (Games)', '2037-2040 (Legacy)'],
+            datasets: [{
+                label: 'Construction',
+                data: [200000, 600000, 50000, 25000],
+                backgroundColor: brandColors.lightGray,
+            }, {
+                label: 'Hospitality & Tourism',
+                data: [75000, 250000, 450000, 350000],
+                backgroundColor: brandColors.peach,
+            }, {
+                label: 'Tech & Finance',
+                data: [30000, 100000, 200000, 300000],
+                backgroundColor: brandColors.teal,
+            }, {
+                label: 'Other Services',
+                data: [40000, 120000, 250000, 180000],
+                backgroundColor: brandColors.lightGreen,
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            scales: {
+                x: { stacked: true },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    ticks: { callback: function(value) { return (value / 1000) + 'K' } }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('gsdpGrowthChart'), {
+        type: 'line',
+        data: {
+            labels: ['2025', '2028', '2031', '2034', '2037', '2040'],
+            datasets: [{
+                label: 'Baseline GSDP Growth',
+                data: [100, 125, 155, 190, 230, 275],
+                borderColor: brandColors.lightGray,
+                pointBackgroundColor: brandColors.lightGray,
+                tension: 0.4,
+                borderDash: [5, 5]
+            }, {
+                label: 'With Olympic Legacy Dividend',
+                data: [100, 130, 175, 240, 320, 410],
+                borderColor: brandColors.teal,
+                backgroundColor: 'rgba(80, 162, 100, 0.1)',
+                fill: true,
+                pointBackgroundColor: brandColors.teal,
+                tension: 0.4
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: { callback: function(value) { return '₹' + value + ' Cr (Index)' } }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('fundingModelChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Public Sector', 'Private Sector / PPP', 'Olympic Revenues'],
+            datasets: [{
+                label: 'Funding Sources',
+                data: [40, 45, 15],
+                backgroundColor: [brandColors.orange, brandColors.peach, brandColors.yellow],
+                borderColor: '#ffffff',
+                borderWidth: 4
+            }]
+        },
+        options: { ...tooltipTitleCallback }
+    });
+</script>
+</body>
+</html>
