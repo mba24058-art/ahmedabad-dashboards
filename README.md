@@ -4,11 +4,5 @@ This repository contains interactive dashboards analyzing the projected economic
 
 ## Dashboards
 
-1. **Dashboard 1**   
-   [Open Dashboard 1](https://mba24058-art.github.io/ahmedabad-dashboards/dashboard1/)
-
-2. **Dashboard 2**  
-   [Open Dashboard 2](https://mba24058-art.github.io/ahmedabad-dashboards/dashboard2/)
-
-3. **Dashboard 3**  
-   [Open Dashboard 3](https://mba24058-art.github.io/ahmedabad-dashboards/dashboard3/)
+1. **Dashboard**  
+   [Open Dashboard](https://mba24058-art.github.io/ahmedabad-dashboards/dashboard3/)
